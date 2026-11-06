@@ -1,6 +1,14 @@
 # Security-work documentation
 
-This documentation is stored under writable `docs/` because the workspace currently grants read-only access to `.agents/`. It is not a substitute for, nor automatically activated like, an agent skill. When `.agents/skills/security-work/` becomes writable, add a concise routing `SKILL.md` linking here and to the established `reliable-work` skill; do not duplicate these references. No live scan or exploit was run while preparing these files.
+Security guidance lives under writable `docs/`. The framework-neutral router and operational skill corpus are in [`skills/`](skills/README.md); host applications must call that router because this repository contains no agent runtime. `.agents/` remains untouched because it is read-only here. Existing references provide deeper procedural detail; no live scan or exploit was run while preparing these files.
+
+## Skill system
+
+- [Skill authoring and router contract](skills/README.md)
+- [Machine-readable tool registry](tools.json)
+- [Composable investigation workflow](workflows/README.md)
+- [Router and scope guard source](../../cybersecurity/)
+- [Automated unit/scenario tests](../../tests/test_cybersecurity.py)
 
 ## Routes
 

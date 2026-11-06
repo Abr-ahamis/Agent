@@ -18,6 +18,9 @@ Markdown conventions take effect only when the agent runtime discovers them or t
 ## Skills, tools, plans, and evidence
 Skills describe reusable procedures; executable tools perform operations within permissions. A plan is not proof. Each check establishes only its stated scope. Final claims should map to observed evidence and identify incomplete work.
 
+## Cybersecurity skill routing
+The repository has no bundled agent runtime. `cybersecurity.SkillRouter` is the integration surface for a host: discover metadata-driven skills, rank transparent trigger matches, compose relevant specialists, and return prerequisites/tool candidates. `ToolRegistry` consumes observed availability supplied by the host. Call `cybersecurity.policy.authorize()` at the execution boundary for active actions; do not treat a generated plan or skill selection as permission. See [skill architecture and examples](security-work/skills/README.md).
+
 ## Security assessment documentation
 
-The security-work reference material is indexed in `docs/security-work/README.md`, with the 100-tool catalog under `docs/security-work/tool-catalog/`. These documents are not an activated skill. The expected `.agents/skills/security-work/SKILL.md` integration path is read-only in this workspace; when write access is available, add a concise routing skill that links to these references rather than duplicating them. Use the scope gate before any active security testing and retain engagement-specific observations in task evidence, not the reusable catalog.
+Security-work references are indexed in `docs/security-work/README.md`, with the 100-tool catalog under `docs/security-work/tool-catalog/` and modular skills under `docs/security-work/skills/`. The router is callable code, but a host must integrate it; Markdown presence alone does not load context. `.agents/` remains read-only here. Use the scope guard before active testing and retain engagement-specific observations in task evidence, not reusable skill/catalog files.
